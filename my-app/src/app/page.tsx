@@ -1,5 +1,5 @@
 import ScrollAnimateWrapper from '../components/ScrollAnimateWrapper';
-import { FaPeopleGroup, FaPhoneSlash, FaMedal } from 'react-icons/fa6';
+import { FaPeopleGroup, FaPhoneSlash, FaMedal, Fa1, Fa2, Fa3, Fa4, Fa5 } from 'react-icons/fa6';
 import { LuTurtle } from 'react-icons/lu';
 import { HiTrendingDown, HiTrendingUp } from 'react-icons/hi';
 import { GiSprint } from 'react-icons/gi';
@@ -8,6 +8,7 @@ import { RiMoneyEuroCircleFill } from 'react-icons/ri';
 export default function Page() {
   const problemIcons = [FaPeopleGroup, LuTurtle, FaPhoneSlash, HiTrendingDown];
   const solutionIcons = [FaMedal, GiSprint, RiMoneyEuroCircleFill, HiTrendingUp];
+  const serviceNumberIcons = [Fa1, Fa2, Fa3, Fa4, Fa5];
   return (
     <div className="min-h-screen bg-bg">
       {/* Navbar */}
@@ -155,9 +156,13 @@ export default function Page() {
               'Atualizações de Conteúdo',
               'Criação de Blog',
               'Alojamento & Segurança'
-            ].map((service, index) => (
+            ].map((service, index) => {
+              const NumIcon = serviceNumberIcons[index];
+              return (
               <div key={index} className="group bg-surface border border-border p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 hover:border-primary cursor-pointer ">
-                <div className="w-16 h-16 bg-primary/10 rounded-lg mb-6 transition-colors group-hover:bg-primary/20"></div>
+                <div className="w-16 h-16 mb-6 flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-accent text-white">
+                  {NumIcon ? <NumIcon className="w-7 h-7" /> : null}
+                </div>
                 <h3 className="text-xl font-semibold text-text mb-4 transition-colors group-hover:text-primary">
                   {service}
                 </h3>
@@ -168,7 +173,7 @@ export default function Page() {
                   Saber mais →
                 </button>
               </div>
-            ))}
+            );})}
           </div>
         </div>
       </section>
@@ -209,7 +214,7 @@ export default function Page() {
                       {plan === 'Basic' && (feature === 1 ? 'Website one-page otimizado' : feature === 2 ? 'Setup SEO on-page' : feature === 3 ? 'Formulários e tracking básico' : 'Alojamento e SSL incluídos')} 
                       {plan === 'Growth' && (feature === 1 ? 'Website até 5 páginas' : feature === 2 ? 'SEO técnico + conteúdos mensais' : feature === 3 ? 'Otimização de conversão (CRO)' : 'Relatórios mensais de performance')} 
                       {plan === 'Premium' && (feature === 1 ? 'Website à medida + blog' : feature === 2 ? 'Plano editorial e link building' : feature === 3 ? 'Automação e integrações' : 'Consultoria estratégica e A/B testing')}
-                    </li>
+          </li>
                   ))}
                 </ul>
                 <button className={`w-full py-3 px-6 rounded-lg font-medium cursor-pointer transition-all hover:shadow-xl active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 ring-offset-2 ${
@@ -244,7 +249,7 @@ export default function Page() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[1, 2, 3].map((testimonial) => (
               <ScrollAnimateWrapper key={testimonial} delay={200 + (testimonial * 100)} className="flex h-full">
-                <div className="bg-bg p-8 rounded-2xl border border-border hover:shadow-lg transition-shadow flex flex-col h-full">
+                <div className="bg-bg p-8 rounded-2xl border border-border hover:shadow-lg hover:scale-105 transition-all flex flex-col h-full">
                 <div className="flex items-center mb-4">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <div key={star} className="w-5 h-5 bg-accent rounded-full mr-1 motion-safe:animate-[pulse_2s_ease-in-out_infinite]"></div>
@@ -344,19 +349,19 @@ export default function Page() {
             <div>
               <h4 className="text-lg font-semibold mb-6">Ligações Rápidas</h4>
               <ul className="space-y-3">
-                <li><a href="#" className="text-black/60 hover:text-white">Início</a></li>
-                <li><a href="#" className="text-black/60 hover:text-white">Serviços</a></li>
-                <li><a href="#" className="text-black/60 hover:text-white">Preços</a></li>
-                <li><a href="#" className="text-black/60 hover:text-white">Sobre</a></li>
+                <li><a href="#" className="text-black/60 hover:text-black">Início</a></li>
+                <li><a href="#" className="text-black/60 hover:text-black">Serviços</a></li>
+                <li><a href="#" className="text-black/60 hover:text-black">Preços</a></li>
+                <li><a href="#" className="text-black/60 hover:text-black">Sobre</a></li>
               </ul>
             </div>
             <div>
               <h4 className="text-lg font-semibold mb-6">Serviços</h4>
               <ul className="space-y-3">
-                <li><a href="#" className="text-black/60 hover:text-white">Criação de Websites</a></li>
-                <li><a href="#" className="text-black/60 hover:text-white">Gestão de SEO</a></li>
-                <li><a href="#" className="text-black/60 hover:text-white">Atualizações de Conteúdo</a></li>
-                <li><a href="#" className="text-black/60 hover:text-white">Criação de Blog</a></li>
+                <li><a href="#" className="text-black/60 hover:text-black">Criação de Websites</a></li>
+                <li><a href="#" className="text-black/60 hover:text-black">Gestão de SEO</a></li>
+                <li><a href="#" className="text-black/60 hover:text-black">Atualizações de Conteúdo</a></li>
+                <li><a href="#" className="text-black/60 hover:text-black">Criação de Blog</a></li>
               </ul>
             </div>
             <div>
