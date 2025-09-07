@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #0a2a65;
+  --color-secondary: #F4F7FA;
+  --color-accent: #668dd7;
+  --color-text: #111827;
+  --color-bg: #F4F7FA;
+  --color-surface: #FFFFFF;
+  --color-border: #E6EEF6;
+  --color-success: #0a2a65;
+  --color-warning: #F59E0B;
+}
+
+@theme inline {
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-text);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --color-text: var(--color-text);
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-border: var(--color-border);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --font-sans: var(--font-body);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+.surface {
+  background-color: var(--color-surface);
+}
+
+.border-ui {
+  border-color: var(--color-border);
+}
+
+/* Premium animations */
+@keyframes fade-up { 
+  from { 
+    opacity: 0; 
+    transform: translateY(12px); 
+  } 
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  } 
+}
+
+/* Scroll-triggered animations */
+.fade-in-on-scroll {
+  animation: fade-up 0.6s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+.fade-in-on-scroll-delay-1 {
+  animation: fade-up 0.6s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+  animation-delay: 0.1s;
+}
+
+.fade-in-on-scroll-delay-2 {
+  animation: fade-up 0.6s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+  animation-delay: 0.2s;
+}
+
+.fade-in-on-scroll-delay-3 {
+  animation: fade-up 0.6s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+  animation-delay: 0.3s;
+}
+
+/* Fallback for browsers without scroll-driven animations */
+@supports not (animation-timeline: view()) {
+  .fade-in-on-scroll,
+  .fade-in-on-scroll-delay-1,
+  .fade-in-on-scroll-delay-2,
+  .fade-in-on-scroll-delay-3 {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+  }
+}
+
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.scroll-animate.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes float { 
+  0%, 100% { 
+    transform: translateY(0); 
+  } 
+  50% { 
+    transform: translateY(-6px); 
+  } 
+}
+
+/* Accessibility: Respect motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
