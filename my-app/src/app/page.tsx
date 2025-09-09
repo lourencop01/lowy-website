@@ -4,6 +4,7 @@ import { LuTurtle } from 'react-icons/lu';
 import { HiTrendingDown, HiTrendingUp } from 'react-icons/hi';
 import { GiSprint } from 'react-icons/gi';
 import { RiMoneyEuroCircleFill } from 'react-icons/ri';
+import Image from 'next/image';
 
 export default function Page() {
   const problemIcons = [FaPeopleGroup, LuTurtle, FaPhoneSlash, HiTrendingDown];
@@ -39,8 +40,8 @@ export default function Page() {
       {/* Hero Section */}
       <section id="inicio" className="relative bg-gradient-to-br from-bg to-secondary/10 py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="text-center lg:text-left">
               <h1 className="text-4xl lg:text-5xl font-bold text-text mb-6 motion-safe:animate-[fade-up_600ms_ease-out_100ms_both]">
                 Mais tráfego. Mais clientes. Websites e SEO que geram resultados.
               </h1>
@@ -52,8 +53,12 @@ export default function Page() {
               </button>
             </div>
             <div className="flex justify-center">
-              <div className="w-full max-w-md h-80 bg-border rounded-2xl flex items-center justify-center transition-transform hover:scale-[1.01] motion-safe:animate-[fade-up_900ms_ease-out_400ms_both] opacity-0">
-                <span className="text-border/60">Imagem/Ilustração do serviço</span>
+              <div className="relative overflow-hidden w-full max-w-2xl h-[28rem] md:h-[26rem] bg-border rounded-2xl flex items-center justify-center transition-transform hover:scale-[1.01] motion-safe:animate-[fade-up_900ms_ease-out_400ms_both] opacity-0">
+                <Image
+                src="/hero.png"
+                alt="Hero"
+                fill
+                className="object-cover" />
               </div>
             </div>
           </div>
@@ -169,9 +174,9 @@ export default function Page() {
                 <p className="text-text/70 mb-6">
                   {service === 'Criação de Websites' ? 'Sites modernos, rápidos e responsivos focados em conversões e performance.' : service === 'Gestão de SEO' ? 'Estratégia completa de SEO on-page, técnico e conteúdos para subir no Google.' : service === 'Atualizações de Conteúdo' ? 'Manutenção contínua do site e conteúdos para manter relevância e autoridade.' : service === 'Criação de Blog' ? 'Artigos otimizados para SEO que atraem tráfego qualificado com intenção de compra.' : 'Infraestrutura segura, backups e monitorização para manter o site sempre online.'}
                 </p>
-                <button className="text-primary hover:text-primary/80 font-medium cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 rounded">
+                {/* <button className="text-primary hover:text-primary/80 font-medium cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 rounded">
                   Saber mais →
-                </button>
+                </button> */}
               </div>
             );})}
           </div>
