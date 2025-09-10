@@ -8,7 +8,7 @@
   --color-bg: #F4F7FA;
   --color-surface: #FFFFFF;
   --color-border: #E6EEF6;
-  --color-success: #0a2a65;
+  --color-success: #00a318;
   --color-warning: #F59E0B;
 }
 
@@ -126,4 +126,9 @@ h1, h2, h3, h4, h5, h6 {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Utility: fix gradient text clipping in Safari/WebKit */
+.text-fill-transparent {
+  -webkit-text-fill-color: transparent;
 }
