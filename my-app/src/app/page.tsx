@@ -1,9 +1,11 @@
 import ScrollAnimateWrapper from '../components/ScrollAnimateWrapper';
+import ContactForm from '../components/ContactForm';
 import { FaPeopleGroup, FaPhoneSlash, FaMedal, Fa1, Fa2, Fa3, Fa4, Fa5 } from 'react-icons/fa6';
 import { LuTurtle } from 'react-icons/lu';
 import { HiTrendingDown, HiTrendingUp } from 'react-icons/hi';
 import { GiSprint } from 'react-icons/gi';
 import { RiMoneyEuroCircleFill } from 'react-icons/ri';
+import { AiFillInstagram } from 'react-icons/ai';
 import Image from 'next/image';
 
 export default function Page() {
@@ -44,7 +46,7 @@ export default function Page() {
                 <a href="#servicos" className="text-text hover:text-primary px-3 py-2 text-sm font-medium transition-colors hover:underline underline-offset-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 rounded">Serviços</a>
                 <a href="#precos" className="text-text hover:text-primary px-3 py-2 text-sm font-medium transition-colors hover:underline underline-offset-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 rounded">Preços</a>
                 <a href="#testemunhos" className="text-text hover:text-primary px-3 py-2 text-sm font-medium transition-colors hover:underline underline-offset-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 rounded">Testemunhos</a>
-                <a href="#contactos" className="text-text hover:text-primary px-3 py-2 text-sm font-medium transition-colors hover:underline underline-offset-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 rounded">Contactos</a>
+                <a href="#contacto" className="text-text hover:text-primary px-3 py-2 text-sm font-medium transition-colors hover:underline underline-offset-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 rounded">Contactos</a>
               </div>
             </div>
               <button className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white px-6 py-2 rounded-full text-sm font-medium cursor-pointer transform hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 ring-offset-2 ring-offset-surface">
@@ -328,12 +330,13 @@ export default function Page() {
             </ScrollAnimateWrapper>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <ScrollAnimateWrapper className="relative w-full h-[22rem] md:h-[22rem] rounded-2xl overflow-hidden bg-border shadow-xl">
+            <ScrollAnimateWrapper className="relative w-full max-w-2xl mx-auto rounded-2xl overflow-hidden bg-border shadow-xl">
               <Image
                 src="/valentina-website.png"
                 alt="Captura de ecrã do website"
-                fill
-                className="object-cover"
+                width={800}
+                height={600}
+                className="w-full h-auto object-contain"
               />
             </ScrollAnimateWrapper>
             <ScrollAnimateWrapper delay={100}>
@@ -437,22 +440,43 @@ export default function Page() {
 
       {/* Final CTA Section */}
       <section id="contactos" className="py-20 bg-gradient-to-r from-primary to-accent">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center motion-safe:animate-[float_10s_ease-in-out_infinite] will-change-transform">
+        <div className="flex flex-col items-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center motion-safe:animate-[float_10s_ease-in-out_infinite] will-change-transform">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
             Pronto para crescer no Google?
           </h2>
           <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
             Fale connosco e receba um plano simples para aumentar tráfego e leads esta semana!
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white hover:bg-white/90 text-primary px-8 py-4 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl cursor-pointer transform hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ring-offset-2 ring-offset-transparent">
+          <div className="flex flex-col gap-4 justify-center items-center max-w-2xl">
+            <button className="w-full bg-white hover:bg-white/90 text-primary px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:shadow-xl cursor-pointer transform hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ring-offset-2 ring-offset-transparent">
               Marcar demonstração de 15 min (sem compromisso)
             </button>
-            <button className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl cursor-pointer transform hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ring-offset-2 ring-offset-transparent">
+            <button className="w-full bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:shadow-xl cursor-pointer transform hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ring-offset-2 ring-offset-transparent">
               Receber proposta em 24h
             </button>
           </div>
           <p className="mt-4 text-white/70 text-sm">Resposta em 24h. Sem compromisso.</p>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section id="contacto" className="py-20 bg-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <ScrollAnimateWrapper>
+              <h2 className="text-3xl lg:text-4xl font-bold text-text mb-4">
+                Fale connosco
+              </h2>
+            </ScrollAnimateWrapper>
+            <ScrollAnimateWrapper delay={100}>
+              <p className="text-xl text-text/70 max-w-3xl mx-auto">
+                Pronto para aumentar o seu tráfego e leads? Envie-nos uma mensagem e receba uma proposta personalizada em 24h.
+              </p>
+            </ScrollAnimateWrapper>
+          </div>
+          <ScrollAnimateWrapper delay={200}>
+            <ContactForm />
+          </ScrollAnimateWrapper>
         </div>
       </section>
 
@@ -468,9 +492,15 @@ export default function Page() {
                 Criamos websites rápidos e estratégias de SEO que colocam a sua marca no topo do Google e ChatGPT e convertem visitas em clientes.
               </p>
               <div className="flex space-x-4">
-                {[1, 2, 3, 4].map((social) => (
-                  <div key={social} className="w-8 h-8 bg-black/20 rounded"></div>
-                ))}
+                <a 
+                  href="https://www.instagram.com/lowy_digital/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 rounded flex items-center justify-center transition-colors"
+                  aria-label="Seguir no Instagram"
+                >
+                  <AiFillInstagram className="w-8 h-8 text-black/70 hover:text-black transition-colors" />
+                </a>
               </div>
             </div>
             <div>
@@ -483,19 +513,10 @@ export default function Page() {
               </ul>
             </div>
             <div>
-              <h4 className="text-lg font-semibold mb-6">Serviços</h4>
-              <ul className="space-y-3">
-                <li><a href="#" className="text-black/60 hover:text-black">Criação de Websites</a></li>
-                <li><a href="#" className="text-black/60 hover:text-black">Gestão de SEO</a></li>
-                <li><a href="#" className="text-black/60 hover:text-black">Atualizações de Conteúdo</a></li>
-                <li><a href="#" className="text-black/60 hover:text-black">Criação de blog</a></li>
-              </ul>
-            </div>
-            <div>
               <h4 className="text-lg font-semibold mb-6">Contactos</h4>
               <ul className="space-y-3 text-black/60">
-                <li>ola@suaagencia.pt</li>
-                <li>+351 915 662 413</li>
+                <li>lowydigitalseo@gmail.com</li>
+                <li>+351 915 662 413 <br/>(rede móvel nacional)</li>
                 <li>Lisboa, Portugal</li>
               </ul>
             </div>
