@@ -130,6 +130,25 @@ export default function ContactForm() {
       </div>
 
       <div>
+        <label htmlFor="website" className="block text-sm font-medium text-text mb-2">
+          Website
+        </label>
+        <input
+          id="website"
+          type="text"
+          name="website"
+          className="w-full px-4 py-3 border border-border rounded-lg bg-surface text-text placeholder-text/50 focus:ring-2 focus:ring-primary/40 focus:border-primary transition-colors"
+          placeholder="www.exemplo.com"
+        />
+        <ValidationError 
+          prefix="Website" 
+          field="website"
+          errors={state.errors}
+          className="text-warning text-sm mt-1"
+        />
+      </div>
+
+      <div>
         <label htmlFor="subject" className="block text-sm font-medium text-text mb-2">
           Assunto *
         </label>

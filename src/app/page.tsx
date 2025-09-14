@@ -2,6 +2,7 @@
 import ScrollAnimateWrapper from '../components/ScrollAnimateWrapper';
 import ContactForm from '../components/ContactForm';
 import { FaPeopleGroup, FaPhoneSlash, FaMedal, Fa1, Fa2, Fa3, Fa4, Fa5 } from 'react-icons/fa6';
+import { FaStar } from 'react-icons/fa';
 import { LuTurtle } from 'react-icons/lu';
 import { HiTrendingDown, HiTrendingUp } from 'react-icons/hi';
 import { GiSprint } from 'react-icons/gi';
@@ -306,7 +307,7 @@ export default function Page() {
                 <div className="bg-bg p-8 rounded-2xl border border-border hover:shadow-lg hover:scale-105 transition-all flex flex-col h-full">
                 <div className="flex items-center mb-4">
                   {[1, 2, 3, 4, 5].map((star) => (
-                    <div key={star} className="w-5 h-5 bg-accent rounded-full mr-1 motion-safe:animate-[pulse_2s_ease-in-out_infinite]"></div>
+                    <FaStar key={star} className="w-5 h-5 text-accent mr-1 motion-safe:animate-[pulse_2s_ease-in-out_infinite]" />
                   ))}
                 </div>
                 <p className="text-text/70 mb-6">
