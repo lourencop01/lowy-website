@@ -1,10 +1,33 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 
 export default function ContactForm() {
   const [state, handleSubmit] = useForm("mldwzawl");
+  const [prefilledSubject, setPrefilledSubject] = useState('');
+
+  useEffect(() => {
+    // Get subject from URL parameters when component mounts
+    const urlParams = new URLSearchParams(window.location.search);
+    const subjectParam = urlParams.get('subject');
+    if (subjectParam) {
+      setPrefilledSubject(decodeURIComponent(subjectParam));
+    }
+
+    // Listen for custom event when CTA is clicked
+    const handleCtaClick = (event: CustomEvent) => {
+      if (event.detail.subject) {
+        setPrefilledSubject(event.detail.subject);
+      }
+    };
+
+    window.addEventListener('ctaClicked', handleCtaClick as EventListener);
+
+    return () => {
+      window.removeEventListener('ctaClicked', handleCtaClick as EventListener);
+    };
+  }, []);
   
   if (state.succeeded) {
     return (
@@ -114,6 +137,8 @@ export default function ContactForm() {
           id="subject"
           name="subject"
           required
+          value={prefilledSubject}
+          onChange={(e) => setPrefilledSubject(e.target.value)}
           className="w-full px-4 py-3 border border-border rounded-lg bg-surface text-text focus:ring-2 focus:ring-primary/40 focus:border-primary transition-colors"
         >
           <option value="">Selecione um assunto</option>

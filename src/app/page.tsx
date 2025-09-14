@@ -1,3 +1,4 @@
+'use client';
 import ScrollAnimateWrapper from '../components/ScrollAnimateWrapper';
 import ContactForm from '../components/ContactForm';
 import { FaPeopleGroup, FaPhoneSlash, FaMedal, Fa1, Fa2, Fa3, Fa4, Fa5 } from 'react-icons/fa6';
@@ -12,6 +13,17 @@ export default function Page() {
   const problemIcons = [FaPeopleGroup, LuTurtle, FaPhoneSlash, HiTrendingDown];
   const solutionIcons = [FaMedal, GiSprint, RiMoneyEuroCircleFill, HiTrendingUp];
   const serviceNumberIcons = [Fa1, Fa2, Fa3, Fa4, Fa5];
+
+  const handleCtaClick = (subject: string) => {
+    // Dispatch custom event to notify ContactForm
+    window.dispatchEvent(new CustomEvent('ctaClicked', { detail: { subject } }));
+    
+    // Scroll to contact form
+    const contactSection = document.getElementById('contacto');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   const featuresByPlan: Record<'Basic' | 'Growth' | 'Premium', string[]> = {
     Basic: [
       'Website otimizado',
@@ -49,7 +61,7 @@ export default function Page() {
                 <a href="#contacto" className="text-text hover:text-primary px-3 py-2 text-sm font-medium transition-colors hover:underline underline-offset-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 rounded">Contactos</a>
               </div>
             </div>
-              <button className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white px-6 py-2 rounded-full text-sm font-medium cursor-pointer transform hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 ring-offset-2 ring-offset-surface">
+              <button onClick={() => handleCtaClick('Pedir Proposta')} className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white px-6 py-2 rounded-full text-sm font-medium cursor-pointer transform hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 ring-offset-2 ring-offset-surface">
                 Pedir Proposta
               </button>
           </div>
@@ -70,7 +82,7 @@ export default function Page() {
               <p className="text-xl text-text/70 mb-8 motion-safe:animate-[fade-up_700ms_ease-out_200ms_both] opacity-0">
                 Construímos websites rápidos e otimizados para Google e ChatGPT que aumentam a visibilidade online e transformam visitas em vendas.
               </p>
-              <button className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:shadow-xl cursor-pointer transform hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 ring-offset-2 ring-offset-bg motion-safe:animate-[fade-up_800ms_ease-out_300ms_both] opacity-0">
+              <button onClick={() => handleCtaClick('Auditoria Gratuita')} className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:shadow-xl cursor-pointer transform hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 ring-offset-2 ring-offset-bg motion-safe:animate-[fade-up_800ms_ease-out_300ms_both] opacity-0">
                 Solicitar auditoria gratuita
               </button>
             </div>
@@ -171,7 +183,7 @@ export default function Page() {
             Receba um relatório simples com oportunidades prioritárias para aumentar tráfego e conversões.
           </p>
           <div className="flex flex-col items-center sm:flex-row gap-4 justify-center">
-            <button className="w-fit bg-white hover:bg-white/90 text-primary px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:shadow-xl cursor-pointer transform hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ring-offset-2 ring-offset-transparent">
+            <button onClick={() => handleCtaClick('Auditoria Gratuita')} className="w-fit bg-white hover:bg-white/90 text-primary px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:shadow-xl cursor-pointer transform hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ring-offset-2 ring-offset-transparent">
               Quero uma auditoria gratuita
             </button>
           </div>
@@ -259,7 +271,7 @@ export default function Page() {
                     </li>
                   ))}
                 </ul>
-                <button className={`w-full py-3 px-6 rounded-lg font-medium cursor-pointer transition-all hover:shadow-xl active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 ring-offset-2 ${
+                <button onClick={() => handleCtaClick('Pedir Proposta')} className={`w-full py-3 px-6 rounded-lg font-medium cursor-pointer transition-all hover:shadow-xl active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 ring-offset-2 ${
                   index === 1 
                     ? 'bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white shadow-lg hover:brightness-[1.03] hover:shadow-[0_8px_30px_rgba(10,42,101,.35)]' 
                     : 'bg-gradient-to-r from-bg to-secondary hover:from-border hover:to-secondary/80 text-text'
@@ -397,7 +409,7 @@ export default function Page() {
             </ScrollAnimateWrapper>
           </div> */}
           <ScrollAnimateWrapper delay={200}>
-            <button className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:shadow-xl cursor-pointer transform hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 ring-offset-2 ring-offset-bg">
+            <button onClick={() => handleCtaClick('Auditoria Gratuita')} className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:shadow-xl cursor-pointer transform hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 ring-offset-2 ring-offset-bg">
               Solicitar auditoria gratuita
             </button>
           </ScrollAnimateWrapper>
@@ -448,10 +460,10 @@ export default function Page() {
             Fale connosco e receba um plano simples para aumentar tráfego e leads esta semana!
           </p>
           <div className="flex flex-col gap-4 justify-center items-center max-w-2xl">
-            <button className="w-full bg-white hover:bg-white/90 text-primary px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:shadow-xl cursor-pointer transform hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ring-offset-2 ring-offset-transparent">
+            <button onClick={() => handleCtaClick('Agendar Demonstração')} className="w-full bg-white hover:bg-white/90 text-primary px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:shadow-xl cursor-pointer transform hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ring-offset-2 ring-offset-transparent">
               Marcar demonstração de 15 min (sem compromisso)
             </button>
-            <button className="w-full bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:shadow-xl cursor-pointer transform hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ring-offset-2 ring-offset-transparent">
+            <button onClick={() => handleCtaClick('Pedir Proposta')} className="w-full bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:shadow-xl cursor-pointer transform hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ring-offset-2 ring-offset-transparent">
               Receber proposta em 24h
             </button>
           </div>
