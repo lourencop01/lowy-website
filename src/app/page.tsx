@@ -15,6 +15,16 @@ export default function Page() {
   const solutionIcons = [FaMedal, GiSprint, RiMoneyEuroCircleFill, HiTrendingUp];
   const serviceNumberIcons = [Fa1, Fa2, Fa3, Fa4, Fa5];
 
+  const testimonials = [
+    {
+      id: 1,
+      name: 'Valentina Menella',
+      position: 'Dona',
+      company: 'Valentina Hair Concept',
+      testimonial: '"Tem sido ótimo trabalhar com o Lourenço! Desde que lançámos o site, notámos logo mais marcações, principalmente de clientes novos e muitos estrangeiros. Alguns até mencionaram que nos encontraram no ChatGPT! Agora temos começado a semana com a agenda quase cheia."'
+    }
+  ];
+
   const handleCtaClick = (subject: string) => {
     // Dispatch custom event to notify ContactForm
     window.dispatchEvent(new CustomEvent('ctaClicked', { detail: { subject } }));
@@ -301,9 +311,9 @@ export default function Page() {
               </p>
             </ScrollAnimateWrapper>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((testimonial) => (
-              <ScrollAnimateWrapper key={testimonial} delay={200 + (testimonial * 100)} className="flex h-full">
+          <div className="flex flex-wrap gap-8 justify-center">
+            {testimonials.map((testimonial, index) => (
+              <ScrollAnimateWrapper key={testimonial.id} delay={200 + ((index + 1) * 100)} className="flex h-full">
                 <div className="bg-bg p-8 rounded-2xl border border-border hover:shadow-lg hover:scale-105 transition-all flex flex-col h-full">
                 <div className="flex items-center mb-4">
                   {[1, 2, 3, 4, 5].map((star) => (
@@ -311,13 +321,13 @@ export default function Page() {
                   ))}
                 </div>
                 <p className="text-text/70 mb-6">
-                  {testimonial === 1 ? '“Em 3 meses subimos para o top 3 no Google e triplicámos pedidos de orçamento.”' : testimonial === 2 ? '“O novo site é rápido e claro. Passámos de 1–2 leads/semana para 10+.”' : '“Finalmente percebo o que funciona: relatórios simples e melhorias contínuas todos os meses.”'}
+                  {testimonial.testimonial}
                 </p>
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-border rounded-full mr-4"></div>
                   <div>
-                    <div className="font-semibold text-text">{testimonial === 1 ? 'Rita Carvalho' : testimonial === 2 ? 'João Mendes' : 'Ana Rocha'}</div>
-                    <div className="text-text/70 text-sm">{testimonial === 1 ? 'Diretora, Clínica Lumina' : testimonial === 2 ? 'CEO, M2 Construções' : 'Marketing Manager, TechWave'}</div>
+                    <div className="font-semibold text-text">{testimonial.name}</div>
+                    <div className="text-text/70 text-sm">{testimonial.position}, {testimonial.company}</div>
                   </div>
                 </div>
                 </div>
@@ -356,7 +366,7 @@ export default function Page() {
               <div className="space-y-6">
                 <h3 className="text-2xl font-semibold text-text">Valentina Hair Concept</h3>
                 <blockquote className="bg-surface border border-border p-6 rounded-xl text-text/80">
-                  “Desde que lançámos o novo website e estratégia de SEO, duplicámos os pedidos de orçamento.”
+                  “Desde o primeiro mês que o site nos deu muita mais visibilidade, trouxe clientes novos e notámos a agenda a encher muito mais depressa.”
                 </blockquote>
                 <ul className="space-y-3">
                   <li className="flex items-start">
@@ -369,7 +379,7 @@ export default function Page() {
                   </li>
                   <li className="flex items-start">
                     <span className="mt-2 mr-3 w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
-                    <span className="text-text/80"><strong className="text-success">1967%</strong> Retorno sobre o investimento, mensalmente</span>
+                    <span className="text-text/80"><strong className="text-success">439%</strong> Mínimo retorno sobre o investimento, mensalmente</span>
                   </li>
                 </ul>
               </div>
