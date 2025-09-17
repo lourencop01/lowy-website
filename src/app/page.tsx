@@ -21,7 +21,8 @@ export default function Page() {
       name: 'Valentina Menella',
       position: 'Dona',
       company: 'Valentina Hair Concept',
-      testimonial: '"Tem sido ótimo trabalhar com o Lourenço! Desde que lançámos o site, notámos logo mais marcações, principalmente de clientes novos e muitos estrangeiros. Alguns até mencionaram que nos encontraram no ChatGPT! Agora temos começado a semana com a agenda quase cheia."'
+      testimonial: '"Tem sido ótimo trabalhar com o Lourenço! Desde que lançámos o site, notámos logo mais marcações, principalmente de clientes novos e muitos estrangeiros. Alguns até mencionaram que nos encontraram no ChatGPT! Agora temos começado a semana com a agenda quase cheia."',
+      image: '/valentina-profile-picture.webp'
     }
   ];
 
@@ -324,7 +325,18 @@ export default function Page() {
                   {testimonial.testimonial}
                 </p>
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-border rounded-full mr-4"></div>
+                  {testimonial.image ? (
+                    <div className="relative w-12 h-12 mr-4">
+                      <Image
+                        src={testimonial.image}
+                        alt={`${testimonial.name} profile picture`}
+                        fill
+                        className="object-cover rounded-full"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-12 h-12 bg-border rounded-full mr-4"></div>
+                  )}
                   <div>
                     <div className="font-semibold text-text">{testimonial.name}</div>
                     <div className="text-text/70 text-sm">{testimonial.position}, {testimonial.company}</div>
