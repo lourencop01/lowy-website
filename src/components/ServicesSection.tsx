@@ -1,5 +1,4 @@
 'use client';
-import ScrollAnimateWrapper from './ScrollAnimateWrapper';
 import { Fa1, Fa2, Fa3, Fa4, Fa5 } from 'react-icons/fa6';
 
 export default function ServicesSection() {
@@ -9,16 +8,12 @@ export default function ServicesSection() {
     <section id="servicos" className="py-20 bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <ScrollAnimateWrapper>
-            <h2 className="text-3xl lg:text-4xl font-bold text-text mb-4">
-              Serviços que fazem o seu negócio crescer
-            </h2>
-          </ScrollAnimateWrapper>
-          <ScrollAnimateWrapper delay={100}>
-            <p className="text-xl text-text/70 max-w-3xl mx-auto">
-              Do design ao SEO, trabalhamos ponta a ponta para gerar tráfego qualificado e leads reais.
-            </p>
-          </ScrollAnimateWrapper>
+          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-4">
+            Serviços que fazem o seu negócio crescer
+          </h2>
+          <p className="text-xl text-text/70 max-w-3xl mx-auto">
+            Do design ao SEO, trabalhamos ponta a ponta para gerar tráfego qualificado e leads reais.
+          </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[

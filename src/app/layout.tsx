@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import { CookieConsentProvider } from "@/contexts/CookieConsentContext";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { GoogleAnalyticsRouteTracker } from "@/components/GoogleAnalyticsRouteTracker";
+import { CookieConsentBanner } from "@/components/CookieConsentBanner";
 
 const inter = Inter({
   variable: "--font-body",
@@ -28,10 +32,36 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-PT">
+      <head>
+        <Script
+          id="ga-consent-default"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              window.gtag = gtag;
+
+              // Default-deny all categories per Consent Mode v2
+              gtag('consent', 'default', {
+                analytics_storage: 'denied',
+                ad_storage: 'denied',
+                functionality_storage: 'denied',
+                personalization_storage: 'denied',
+                security_storage: 'granted'
+              });
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${inter.variable} ${poppins.variable} antialiased font-body`}
       >
-        <Script id="organization-structured-data" type="application/ld+json" strategy="beforeInteractive">
+        <CookieConsentProvider>
+          <GoogleAnalytics />
+          <GoogleAnalyticsRouteTracker />
+          <CookieConsentBanner />
+          <Script id="organization-structured-data" type="application/ld+json" strategy="beforeInteractive">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
@@ -59,7 +89,8 @@ export default function RootLayout({
             logo: "/logo_black_nobg.webp"
           })}
         </Script>
-        {children}
+          {children}
+        </CookieConsentProvider>
       </body>
     </html>
   );

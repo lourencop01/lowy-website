@@ -1,5 +1,4 @@
 'use client';
-import ScrollAnimateWrapper from './ScrollAnimateWrapper';
 import { FaStar } from 'react-icons/fa';
 import Image from 'next/image';
 
@@ -19,20 +18,16 @@ export default function TestimonialsSection() {
     <section id="testemunhos" className="py-20 bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <ScrollAnimateWrapper>
-            <h2 className="text-3xl lg:text-4xl font-bold text-text mb-4">
-              Resultados que os clientes sentem
-            </h2>
-          </ScrollAnimateWrapper>
-          <ScrollAnimateWrapper delay={100}>
-            <p className="text-xl text-text/70 max-w-3xl mx-auto">
-              Histórias reais de empresas que escalaram tráfego, leads e vendas connosco.
-            </p>
-          </ScrollAnimateWrapper>
+          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-4">
+            Resultados que os clientes sentem
+          </h2>
+          <p className="text-xl text-text/70 max-w-3xl mx-auto">
+            Histórias reais de empresas que escalaram tráfego, leads e vendas connosco.
+          </p>
         </div>
         <div className="flex flex-wrap gap-8 justify-center">
           {testimonials.map((testimonial, index) => (
-            <ScrollAnimateWrapper key={testimonial.id} delay={200 + ((index + 1) * 100)} className="flex h-full">
+            <div key={testimonial.id} className="flex h-full">
               <div className="bg-bg p-8 rounded-2xl border border-border hover:shadow-lg hover:scale-105 transition-all flex flex-col h-full">
               <div className="flex items-center mb-4">
                 {[1, 2, 3, 4, 5].map((star) => (
@@ -62,7 +57,7 @@ export default function TestimonialsSection() {
                 </div>
               </div>
               </div>
-            </ScrollAnimateWrapper>
+            </div>
           ))}
         </div>
       </div>
