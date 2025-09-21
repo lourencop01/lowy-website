@@ -56,7 +56,7 @@ export default function RootLayout({
               addressLocality: "Lisboa",
               addressCountry: "PT"
             },
-            logo: "/logo_black.png"
+            logo: "/logo_black_nobg.webp"
           })}
         </Script>
         {children}
