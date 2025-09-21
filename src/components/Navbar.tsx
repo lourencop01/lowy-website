@@ -12,7 +12,7 @@ export default function Navbar({ onCtaClick }: NavbarProps) {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <div className="relative w-17 h-8 rounded transition-transform hover:scale-[1.02]">
-              <Image src="/logo_black_nobg.webp" alt="Logótipo" fill className="object-cover" />
+              <Image src="/logo_black_nobg.webp" alt="Logótipo" fill sizes="68px" className="object-cover" />
             </div>
           </div>
           <div className="hidden md:block">

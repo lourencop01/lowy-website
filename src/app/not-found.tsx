@@ -6,7 +6,7 @@ export default function NotFound() {
     <div className="min-h-screen bg-bg flex items-center justify-center px-4">
       <div className="max-w-2xl mx-auto text-center">
         <div className="relative w-24 h-16 mx-auto mb-8">
-          <Image src="/logo_black_nobg.webp" alt="Lowy" fill className="object-contain" />
+          <Image src="/logo_black_nobg.webp" alt="Lowy" fill sizes="96px" className="object-contain" />
         </div>
         
         <h1 className="text-6xl font-bold text-text mb-4">404</h1>

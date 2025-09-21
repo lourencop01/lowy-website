@@ -30,6 +30,7 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
               src="/hero.webp"
               alt="Imagem principal"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               className="object-cover" />
             </div>
           </div>

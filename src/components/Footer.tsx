@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="relative w-18 h-8 rounded mb-6">
-              <Image src="/logo_black_nobg.webp" alt="Logótipo" fill className="object-cover" />
+              <Image src="/logo_black_nobg.webp" alt="Logótipo" fill sizes="72px" className="object-cover" />
             </div>
             <p className="text-black/60 mb-6">
               Criamos websites rápidos e estratégias de SEO que colocam a sua marca no topo do Google e ChatGPT e convertem visitas em clientes.

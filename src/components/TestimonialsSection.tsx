@@ -49,6 +49,7 @@ export default function TestimonialsSection() {
                       src={testimonial.image}
                       alt={`${testimonial.name} profile picture`}
                       fill
+                      sizes="48px"
                       className="object-cover rounded-full"
                     />
                   </div>
