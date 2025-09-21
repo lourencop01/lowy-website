@@ -25,7 +25,7 @@ export default function CaseStudySection({ onCtaClick }: CaseStudySectionProps) 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <ScrollAnimateWrapper className="relative w-full max-w-2xl mx-auto rounded-2xl overflow-hidden bg-border shadow-xl">
             <Image
-              src="/valentina-website.png"
+              src="/valentina-website-case.webp"
               alt="Captura de ecrã do website"
               width={800}
               height={600}

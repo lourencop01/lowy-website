@@ -1,0 +1,81 @@
+# Robots.txt for Lowy Digital
+# Generated automatically for SEO and web development services
+
+User-agent: *
+
+# Allow essential files and assets
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /favicon.ico
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+Allow: /_next/static/
+
+# Block sensitive paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /dashboard/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /cache/
+Disallow: /.env
+Disallow: /config/
+Disallow: /scripts/
+
+# Block development and build files
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /.next/
+Disallow: /build/
+Disallow: /dist/
+
+# Block common sensitive files
+Disallow: /*.env*
+Disallow: /*.log
+Disallow: /*.json$
+Disallow: /package*.json
+Disallow: /tsconfig*.json
+Disallow: /next.config.*
+Disallow: /tailwind.config.*
+
+# Allow specific crawlers optimized for business services
+User-agent: Googlebot
+Allow: /
+Allow: /sitemap.xml
+
+User-agent: Bingbot
+Allow: /
+Allow: /sitemap.xml
+
+# Allow OpenAI's search crawler for ChatGPT search
+User-agent: OAI-SearchBot
+Allow: /
+Allow: /sitemap.xml
+
+# Allow ChatGPT-User for content indexing
+User-agent: ChatGPT-User
+Allow: /
+Allow: /sitemap.xml
+
+# Allow other AI crawlers
+User-agent: GPTBot
+Allow: /
+Allow: /sitemap.xml
+
+User-agent: CCBot
+Allow: /
+Allow: /sitemap.xml
+
+# Crawl delay for other bots (be nice to server)
+User-agent: *
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://lowydigital.pt/sitemap.xml

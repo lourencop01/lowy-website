@@ -43,7 +43,7 @@ export default function Page() {
           },
           primaryImageOfPage: {
             "@type": "ImageObject",
-            url: "/hero.png"
+            url: "/hero.webp"
           }
         })}
       </Script>
