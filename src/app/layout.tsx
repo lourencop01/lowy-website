@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
+import { Suspense } from "react";
 import Script from "next/script";
 import "./globals.css";
 import { CookieConsentProvider } from "@/contexts/CookieConsentContext";
@@ -59,7 +60,9 @@ export default function RootLayout({
       >
         <CookieConsentProvider>
           <GoogleAnalytics />
-          <GoogleAnalyticsRouteTracker />
+          <Suspense fallback={null}>
+            <GoogleAnalyticsRouteTracker />
+          </Suspense>
           <CookieConsentBanner />
           <Script id="organization-structured-data" type="application/ld+json" strategy="beforeInteractive">
           {JSON.stringify({
