@@ -11,7 +11,23 @@ export default function TestimonialsSection() {
       company: 'Valentina Hair Concept',
       testimonial: '"Tem sido ótimo trabalhar com o Lourenço! Desde que lançámos o site, notámos logo mais marcações, principalmente de clientes novos e muitos estrangeiros. Alguns até mencionaram que nos encontraram no ChatGPT! Agora temos começado a semana com a agenda quase cheia."',
       image: '/valentina-profile-picture.webp'
-    }
+    },
+    {
+      id: 2,
+      name: 'Tiago Zattar',
+      position: 'Dono',
+      company: 'Tiago Zattar Hair',
+      testimonial: '"Muito boa experiência, com elevado profissionalismo e agilidade. Atendimento de excelência e resultados muito positivos!"',
+      image: '/tiago-zattar-profile-picture.webp'
+    },
+    // {
+    //   id: 3,
+    //   name: 'Edu',
+    //   position: 'Dono',
+    //   company: 'Studio 27 by Edu',
+    //   testimonial: '"Tem sido ótimo trabalhar com o Lourenço! Desde que lançámos o site, notámos logo mais marcações, principalmente de clientes novos e muitos estrangeiros. Alguns até mencionaram que nos encontraram no ChatGPT! Agora temos começado a semana com a agenda quase cheia."',
+    //   image: '/studio-27-profile-picture.webp'
+    // }
   ];
 
   return (
@@ -27,8 +43,8 @@ export default function TestimonialsSection() {
         </div>
         <div className="flex flex-wrap gap-8 justify-center">
           {testimonials.map((testimonial, index) => (
-            <div key={testimonial.id} className="flex h-full">
-              <div className="bg-bg p-8 rounded-2xl border border-border hover:shadow-lg hover:scale-105 transition-all flex flex-col h-full">
+            <div key={testimonial.id} className="flex w-full h-full">
+              <div className="w-full bg-bg p-8 rounded-2xl border border-border hover:shadow-lg hover:scale-105 transition-all flex flex-col h-full">
               <div className="flex items-center mb-4">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <FaStar key={star} className="w-5 h-5 text-accent mr-1 motion-safe:animate-[pulse_2s_ease-in-out_infinite]" />

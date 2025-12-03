@@ -45,7 +45,7 @@ export default function PricingSection({ onCtaClick }: PricingSectionProps) {
               )}
               <h3 className="text-2xl font-bold text-text mb-4">{plan === 'Basic' ? 'Essencial' : plan === 'Growth' ? 'Crescimento' : 'Premium'}</h3>
               <div className="mb-6">
-                <span className="text-4xl font-bold text-text">{plan === 'Basic' ? '€49' : plan === 'Growth' ? '€89' : '€189'}</span>
+                <span className="text-4xl font-bold text-text">{plan === 'Basic' ? '€159' : plan === 'Growth' ? '€189' : '€289'}</span>
                 <span className="text-text/70">/mês</span>
               </div>
               <ul className="space-y-3 mb-8">

@@ -9,7 +9,7 @@ export default function CTASection({ onCtaClick }: CTASectionProps) {
     <section id="contactos" className="py-20 bg-gradient-to-r from-primary to-accent">
       <div className="flex flex-col items-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center motion-safe:animate-[float_10s_ease-in-out_infinite] will-change-transform">
         <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-          Pronto para crescer no Google?
+          Pronto para crescer no Google e ChatGPT?
         </h2>
         <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
           Fale connosco e receba um plano simples para aumentar tráfego e leads esta semana!
