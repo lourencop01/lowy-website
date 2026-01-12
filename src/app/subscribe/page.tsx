@@ -81,7 +81,7 @@ export default function SubscribePage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="firstName" className="block text-sm font-medium text-text mb-2">
-                    First name *
+                    Primeiro nome *
                   </label>
                   <input
                     id="firstName"
@@ -89,13 +89,13 @@ export default function SubscribePage() {
                     name="firstName"
                     required
                     className="w-full px-4 py-3 border border-border rounded-lg bg-bg text-text placeholder-text/50 focus:ring-2 focus:ring-primary/40 focus:border-primary transition-colors"
-                    placeholder="John"
+                    placeholder="João"
                   />
                 </div>
 
                 <div>
                   <label htmlFor="lastName" className="block text-sm font-medium text-text mb-2">
-                    Last name *
+                    Último nome *
                   </label>
                   <input
                     id="lastName"
@@ -103,7 +103,7 @@ export default function SubscribePage() {
                     name="lastName"
                     required
                     className="w-full px-4 py-3 border border-border rounded-lg bg-bg text-text placeholder-text/50 focus:ring-2 focus:ring-primary/40 focus:border-primary transition-colors"
-                    placeholder="Doe"
+                    placeholder="Silva"
                   />
                 </div>
               </div>
@@ -111,7 +111,7 @@ export default function SubscribePage() {
               {/* Company Name */}
               <div>
                 <label htmlFor="companyName" className="block text-sm font-medium text-text mb-2">
-                  Company Name *
+                  Nome da empresa *
                 </label>
                 <input
                   id="companyName"
@@ -119,14 +119,14 @@ export default function SubscribePage() {
                   name="companyName"
                   required
                   className="w-full px-4 py-3 border border-border rounded-lg bg-bg text-text placeholder-text/50 focus:ring-2 focus:ring-primary/40 focus:border-primary transition-colors"
-                  placeholder="Your Company Ltd."
+                  placeholder="Empresa LTDA"
                 />
               </div>
 
               {/* Promotion Code */}
               <div>
                 <label htmlFor="promotionCode" className="block text-sm font-medium text-text mb-2">
-                  Promotion Code
+                  Código de promoção
                 </label>
                 <div className="flex gap-2">
                   <input
@@ -137,14 +137,14 @@ export default function SubscribePage() {
                     onChange={(e) => handlePromotionCodeChange(e.target.value)}
                     onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), handleApplyPromoCode())}
                     className="flex-1 px-4 py-3 border border-border rounded-lg bg-bg text-text placeholder-text/50 focus:ring-2 focus:ring-primary/40 focus:border-primary transition-colors"
-                    placeholder="Enter code (optional)"
+                    placeholder="Introduza o código de promoção (opcional)"
                   />
                   <button
                     type="button"
                     onClick={handleApplyPromoCode}
                     className="px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium transition-colors focus:ring-2 focus:ring-primary/40"
                   >
-                    Apply
+                    Aplicar
                   </button>
                 </div>
                 {codeStatus === 'valid' && (
@@ -152,7 +152,7 @@ export default function SubscribePage() {
                     <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    Code applied! You save {appliedDiscount}€
+                    Código aplicado! Você poupa {appliedDiscount}€
                   </p>
                 )}
                 {codeStatus === 'invalid' && (
@@ -160,7 +160,7 @@ export default function SubscribePage() {
                     <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
-                    Invalid promotion code
+                    Código de promoção inválido
                   </p>
                 )}
               </div>
@@ -170,23 +170,23 @@ export default function SubscribePage() {
                 {appliedDiscount > 0 ? (
                   <>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-medium text-text/70">Original Price</span>
+                      <span className="text-sm font-medium text-text/70">Preço original</span>
                       <span className="text-lg text-text/70 line-through">{basePrice}€</span>
                     </div>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-medium text-success">Discount</span>
+                      <span className="text-sm font-medium text-success">Desconto</span>
                       <span className="text-lg text-success">-{appliedDiscount}€</span>
                     </div>
                     <div className="border-t border-primary/20 pt-3 mt-3">
                       <div className="flex justify-between items-center">
-                        <span className="text-lg font-medium text-text">Total</span>
+                        <span className="text-lg font-medium text-text">Preço final</span>
                         <span className="text-3xl font-bold text-text">{finalPrice}€</span>
                       </div>
                     </div>
                   </>
                 ) : (
                   <div className="flex justify-between items-center">
-                    <span className="text-lg font-medium text-text">Total</span>
+                    <span className="text-lg font-medium text-text">Preço final</span>
                     <span className="text-3xl font-bold text-text">{basePrice}€</span>
                   </div>
                 )}
@@ -199,7 +199,7 @@ export default function SubscribePage() {
                   type="submit"
                   className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:shadow-xl cursor-pointer hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 ring-offset-2 ring-offset-bg transition-all"
                 >
-                  Subscribe
+                  Subscrever
                 </button>
               </div>
 
